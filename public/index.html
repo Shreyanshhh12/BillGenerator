@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bill Generator</title>
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-6 space-y-6">
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl font-bold">🧾 Bill Generator</h1>
+      <button onclick="viewInvoices()" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">📂 View Invoices</button>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <input id="invoice_number" class="p-2 text-black" placeholder="Invoice Number" />
+      <input id="invoice_date" type="date" class="p-2 text-black" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <h2 class="text-xl font-semibold mt-4 mb-2">Supplier Details</h2>
+        <input id="supplier" class="w-full p-2 mb-2 text-black" placeholder="Name" />
+        <input id="supplier_address" class="w-full p-2 mb-2 text-black" placeholder="Address" />
+        <input id="supplier_phone" class="w-full p-2 mb-2 text-black" placeholder="Phone" />
+        <input id="supplier_gstin" class="w-full p-2 mb-2 text-black" placeholder="GSTIN" />
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mt-4 mb-2">Recipient Details</h2>
+        <input id="recipient" class="w-full p-2 mb-2 text-black" placeholder="Name" />
+        <input id="recipient_address" class="w-full p-2 mb-2 text-black" placeholder="Address" />
+        <input id="recipient_phone" class="w-full p-2 mb-2 text-black" placeholder="Phone" />
+        <input id="recipient_gstin" class="w-full p-2 mb-2 text-black" placeholder="GSTIN" />
+      </div>
+    </div>
+
+    <h2 class="text-xl font-semibold mt-6">Add Item</h2>
+    <div class="grid grid-cols-2 md:grid-cols-8 gap-2">
+      <input id="item" class="p-2 text-black" placeholder="Item Name" />
+      <input id="hsn" class="p-2 text-black" placeholder="HSN Code" />
+      <input id="qty" class="p-2 text-black" placeholder="Qty (e.g., 2kg)" />
+      <input id="price" class="p-2 text-black" placeholder="Price ₹" />
+      <input id="cgst" class="p-2 text-black" placeholder="CGST Amt ₹" />
+      <input id="sgst" class="p-2 text-black" placeholder="SGST Amt ₹" />
+      <input id="manual_total" class="p-2 text-black" placeholder="Total ₹" />
+      <button onclick="addItem()" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">➕ Add Item</button>
+    </div>
+
+    <div id="item-list" class="space-y-2 mt-4"></div>
+
+    <h2 class="text-xl font-semibold mt-6">Totals</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-black">
+      <input id="total-taxable" class="p-2 rounded" placeholder="Enter Total Taxable Amount ₹" />
+      <input id="total-tax" class="p-2 rounded" placeholder="Enter Total Tax Amount ₹" />
+      <input id="grand-total" class="p-2 rounded" placeholder="Enter Grand Total ₹" />
+    </div>
+
+    <button onclick="submitInvoice()" class="bg-green-600 hover:bg-green-700 text-white p-3 rounded mt-4">
+      ✅ Generate Invoice
+    </button>
+
+    <p id="output" class="text-yellow-400 mt-4"></p>
+    <div id="invoice-list" class="mt-6 space-y-2"></div>
+  </body>
+</html>

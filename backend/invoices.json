@@ -1,0 +1,54 @@
+[
+  {
+    "number": "",
+    "date": "",
+    "supplier": "",
+    "supplier_address": "",
+    "supplier_phone": "",
+    "supplier_gstin": "",
+    "recipient": "",
+    "recipient_address": "",
+    "recipient_phone": "",
+    "recipient_gstin": "",
+    "items": [
+      {
+        "item": "Haldi 100gm",
+        "hsn": "910",
+        "qty": 20,
+        "price": 200,
+        "baseTotal": 4000,
+        "cgstRate": 2,
+        "sgstRate": 2,
+        "cgstAmt": 80,
+        "sgstAmt": 80,
+        "total": 4160
+      }
+    ]
+  },
+  {
+    "number": "450",
+    "date": "2025-02-01",
+    "supplier": "SRI VENKATA SAI ENTERPRISES ",
+    "supplier_address": "18-7-459/9/A Hanuman Nagar Phase 3 ",
+    "supplier_phone": "9381896772",
+    "supplier_gstin": "HSSKSSSSJKSKSKS",
+    "recipient": "SHSUJSJSSJ",
+    "recipient_address": "SJSJJSJSJS",
+    "recipient_phone": "SHSSSJ",
+    "recipient_gstin": "SJSSJ",
+    "total_taxable": "5000",
+    "total_tax": "100",
+    "grand_total": "5000",
+    "items": [
+      {
+        "item": "Haldi 100gm",
+        "hsn": "910",
+        "qty": "10kg",
+        "price": "500",
+        "cgstAmt": "50",
+        "sgstAmt": "50",
+        "total": "5000"
+      }
+    ]
+  }
+]
